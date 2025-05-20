@@ -1,10 +1,13 @@
-# 01_tracciamento_mani.py
+# Module 01: tracciamento_mani.py
 from ursina import *
 import cv2
 import threading
 import mediapipe as mp
 
+from ambiente_lab import crea_laboratorio
+
 app = Ursina()
+crea_laboratorio()
 
 window.color = color.black
 camera.position = (0, 0, -8)
