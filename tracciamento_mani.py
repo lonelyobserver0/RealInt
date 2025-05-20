@@ -5,6 +5,7 @@ import threading
 import mediapipe as mp
 
 app = Ursina()
+
 window.color = color.black
 camera.position = (0, 0, -8)
 
