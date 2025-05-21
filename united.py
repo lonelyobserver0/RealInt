@@ -4,7 +4,6 @@ import cv2
 import mediapipe as mp
 import numpy as np
 import threading
-import datetime
 
 time_index = 0
 
