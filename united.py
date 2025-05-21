@@ -77,7 +77,8 @@ def hand_tracking_loop():
                     try:
                         landmarks_global[idx].append((x * 10, y * 10 + 2, z * 10))
                     except IndexError as e:
-                        print("[Managed Error] List index out of range")
+                        #print(f"[Managed Error] { e }")
+                        pass
 
 tracking_thread = threading.Thread(target=hand_tracking_loop, daemon=True)
 tracking_thread.start()
@@ -98,6 +99,7 @@ def update():
         dist = distance(thumb_tip, index_tip)
 
         if dist < 0.3 and not grabbed:
+            print("[LOG - Gesture - Right hand] Pinched")
             if distance(grab_object.position, index_tip) < 1:
                 grab_object.position = index_tip
                 grabbed = True
