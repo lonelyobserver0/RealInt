@@ -4,6 +4,9 @@ import cv2
 import mediapipe as mp
 import numpy as np
 import threading
+import datetime
+
+time_index = 0
 
 app = Ursina()
 window.title = 'RealInt Lab'
@@ -99,7 +102,7 @@ def update():
         dist = distance(thumb_tip, index_tip)
 
         if dist < 0.3 and not grabbed:
-            print("[LOG - Gesture - Right hand] Pinched")
+            print(f"{ time_index + 1 } [LOG - Gesture - Right hand] Pinched")
             if distance(grab_object.position, index_tip) < 1:
                 grab_object.position = index_tip
                 grabbed = True
